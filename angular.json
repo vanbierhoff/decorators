@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "bi-decorators": {
+      "projectType": "library",
+      "root": "projects/bi-decorators",
+      "sourceRoot": "projects/bi-decorators/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bi-decorators/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bi-decorators/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bi-decorators/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bi-decorators/src/test.ts",
+            "tsConfig": "projects/bi-decorators/tsconfig.spec.json",
+            "karmaConfig": "projects/bi-decorators/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "decorators"
