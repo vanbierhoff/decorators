@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { DecoratorsLibComponent } from './decorators-lib.component';
+import { DecoratorsLibComponent } from "./decorators-lib.component";
 
 
 

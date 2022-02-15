@@ -1,7 +1,9 @@
-import {BiMeta, Role, ToArrayByRole} from "decorators-lib";
+import { Role } from "@bi-meta/decorators/decorators/role";
+import { ToArrayByRole } from "@bi-meta/decorators/decorators/to-array-by-role";
+import { BiMetadata } from "@bi-meta/decorators/decorators/meta";
 
 
-@BiMeta()
+@BiMetadata()
 export class NestedMenu {
   @Role('ADMIN')
   nestedOne = 'rex'
@@ -14,7 +16,7 @@ export class NestedMenu {
 
 }
 
-@BiMeta()
+@BiMetadata()
 export class Menu {
 
   @Role('ADMIN')

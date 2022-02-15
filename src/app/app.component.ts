@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {BiMeta} from "../../projects/decorators-lib/src/lib/meta/meta";
+
 import {Menu} from "../modules/menu/models/menu";
-import {OnChangeValue} from "decorators-lib";
+import { OnChangeValue } from "@bi-meta/decorators/decorators/change-field";
+import { BiMeta } from "@bi-meta/decorators/meta/meta";
+
 
 
 @Component({
