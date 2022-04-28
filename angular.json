@@ -136,6 +136,68 @@
           }
         }
       }
+    },
+    "bi-forms": {
+      "projectType": "library",
+      "root": "projects/bi-forms",
+      "sourceRoot": "projects/bi-forms/src",
+      "prefix": "bi",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bi-forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bi-forms/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bi-forms/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bi-forms/src/test.ts",
+            "tsConfig": "projects/bi-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/bi-forms/karma.conf.js"
+          }
+        }
+      }
+    },
+    "policy": {
+      "projectType": "library",
+      "root": "projects/policy",
+      "sourceRoot": "projects/policy/src",
+      "prefix": "bi",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/policy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/policy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/policy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/policy/src/test.ts",
+            "tsConfig": "projects/policy/tsconfig.spec.json",
+            "karmaConfig": "projects/policy/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "decorators"

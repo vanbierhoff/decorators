@@ -16,13 +16,19 @@
       "@bi-meta/decorators/*": [
         "projects/decorators/src/lib/*"
       ],
+      "@bi-meta/policy": [
+        "projects/bi-policy/src/lib/"
+      ],
+      "@bi-meta/policy/*": [
+        "projects/bi-policy/src/lib/*"
+      ]
     },
     "strict": true,
     "noImplicitOverride": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
