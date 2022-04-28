@@ -1,23 +1,34 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "include": ["projects/**/*"],
+  "exclude": [
+    "projects/**/*.spec.ts"
+  ],
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "decorators-lib": [
-        "dist/decorators-lib"
+      "@bi-meta/decorators": [
+        "projects/decorators/src/lib/"
       ],
-      "decorators-lib/*": [
-        "dist/decorators-lib/meta/*"
+      "@bi-meta/decorators/*": [
+        "projects/decorators/src/lib/*"
+      ],
+      "@bi-meta/policy": [
+        "projects/bi-policy/src/lib/"
+      ],
+      "@bi-meta/policy/*": [
+        "projects/bi-policy/src/lib/*"
       ]
     },
     "strict": true,
     "noImplicitOverride": true,
     "noImplicitAny": false,
+    "strictNullChecks": false,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,

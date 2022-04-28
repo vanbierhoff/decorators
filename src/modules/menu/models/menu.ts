@@ -1,33 +1,42 @@
-import {BiMeta, Role, ToArrayByRole} from "decorators-lib";
+import { BiMetaDecorator } from "@bi-meta/policy/meta/decorators/bi-meta/bi-meta.decorator";
+import { BiPolicy } from "@bi-meta/policy/meta";
 
+import { BiToArrayByPolicyDecorator } from "@bi-meta/policy/meta/decorators/meta-policy/to-array-by-policy/bi-to-array-by-policy.decorator";
+import { PolicyInstance } from "@bi-meta/policy/models/policy-instance";
+import { byRolePolicy } from "@bi-meta/policy/meta/decorators/meta-policy/policy-helpers/by-role/by-role-policy";
+import { ConstructableInstance } from "@bi-meta/policy/meta/decorators/meta-policy/to-array-by-policy/models/array-by-policy.interface";
 
-@BiMeta()
+@BiMetaDecorator()
 export class NestedMenu {
-  @Role('ADMIN')
+  @BiPolicy(byRolePolicy(['ROLES_USER']))
   nestedOne = 'rex'
 
-  @Role('BOSS')
+  @BiPolicy(byRolePolicy(['ONLY_ADMIN']))
   nestedTwo = 'BOSS'
 
-  @Role('ADMIN')
+  @BiPolicy(byRolePolicy(['ROLES_USER_X']))
   nestedBox = 'BOX'
 
 }
 
-@BiMeta()
+@BiMetaDecorator()
 export class Menu {
 
-  @Role('ADMIN')
-  menu = {}
+  @BiPolicy(byRolePolicy(['ROLES_USER']))
+  public menu = false;
 
-  @ToArrayByRole(NestedMenu, 'parentField')
-  nested = {
+
+  @BiToArrayByPolicyDecorator(new NestedMenu(), byRolePolicy(['ROLES_USER']), 'fields')
+ public nested = {
     title: 'title',
-    parentField: {}
+    parentField: {},
+    fields: []
+  }
+
+  constructor( protected auth: PolicyInstance) {
   }
 
 }
-
 
 
 
